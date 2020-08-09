@@ -1,0 +1,15 @@
+:root{
+    --color-white:white;
+    --color--shop: linear-gradient(to top, #ee5b36 , #ed3d33);
+    --color-abc: #ee5235;
+    --line-height-header: 34px;
+
+    --width-input-search: 840px;
+
+    --height-header:120px;
+    --height-header-search: calc( var(--height-header) - var(--line-height-header) );
+    --height-input-search: 40px;
+}
+body{
+    font-family: 'Roboto', sans-serif;
+}
