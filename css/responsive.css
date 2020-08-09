@@ -11,7 +11,7 @@
         width: 320px;
     }
 } 
-/* tablet */
+/* tablet ngang */
 @media (min-width: 1024px) and (max-width: 1199px) {
     .header__navbar-bot{
         justify-content: space-between;
@@ -33,6 +33,22 @@
     }
     .fa-shopping-cart{
         margin-right: 70px;
+    }
+} 
+/* tablet doc */
+@media (min-width: 768px) and (max-width: 1023px) {
+     /* SEARCH HEADER */
+     .header__navbar-bot{
+        justify-content: space-between;
+    }
+     .navbar__search{
+        width: 80%;
+    }
+    .navbar__search-header{
+        width: 100%;
+    }
+    .fa-shopping-cart{
+        margin-right: 30px;
     }
 } 
 /* mobile */
