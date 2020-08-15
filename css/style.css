@@ -389,6 +389,11 @@ DEAL HOT */
 }
 
 /* NAVBAR KEYWORD */
+.keyword__mobile{
+    margin-top: 10px;
+    margin-bottom: 5px;
+    overflow-x: auto;
+}
 .keyword{
     margin-top:15px;
     margin-bottom:7px;
