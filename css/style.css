@@ -400,9 +400,7 @@ DEAL HOT */
     list-style: none;
     overflow-x: auto;
 }
-.keykword__list::-webkit-scrollbar{
-    display: none;
-}
+
 .keyword__list-item{
     margin-right:8px;
     flex-shrink: 0;
