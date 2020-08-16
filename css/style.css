@@ -219,8 +219,41 @@ header{
    
     border: 1px solid var(--color-abc);
 }
+.product__list{
+    position: relative;
+}
 .product__img{
     width: 100%;
+    
+}
+.product__img-favorite i{
+    color:white;
+    font-size:0.8rem;
+}
+.product__img-favorite span{
+    color:white;
+}
+
+.product__img-favorite{
+    position: absolute;
+    top: 2%;
+    padding: 0px 4px;
+    border-top-right-radius: 2px;
+    border-bottom-right-radius: 2px;
+    left: -4px;
+    color: var(--color-abc);
+    line-height: 1.2rem;
+    background-color: currentColor;
+    
+}
+.product__img-favorite::after{
+    content:"";
+    position: absolute;
+    top:100%;
+    left:0;
+    border-top: 3px solid red;
+    border-left: 3px solid transparent;
+    filter: brightness(60%);
 }
 .product_profile{
     padding: 10px 10px;
@@ -390,6 +423,7 @@ DEAL HOT */
 
 /* NAVBAR KEYWORD */
 .keyword__mobile{
+    display: none;
     margin-top: 10px;
     margin-bottom: 5px;
     overflow-x: auto;
