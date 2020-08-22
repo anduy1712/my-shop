@@ -189,7 +189,19 @@
         flex-wrap: unset!important;
         overflow-x: auto;
     }
-
+    /* Chi tiet san pham */
+   .postheader__box-content{
+    flex-direction: column;
+    }
+    .content__left {
+        width: 100%;
+        text-transform: uppercase;
+        margin-bottom: 6px;
+        font-size: 1.8rem;
+    }
+   .btnn{
+    min-width: 146px;
+   }
    
 } 
 
