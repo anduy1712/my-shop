@@ -71,6 +71,10 @@
     .fa-shopping-cart{
         margin-right: 30px;
     }
+    .container{
+    
+        margin-top:calc(var(--height-header));
+    }
 } 
 /* mobile */
 @media (max-width: 739px){
@@ -106,6 +110,7 @@
         margin-top: calc(var(--height-header)/2);
        
     }
+    
     .navbar__search-onmobile{
         display: block;
         
@@ -143,7 +148,7 @@
    
     .navbar__search {
         opacity: 0;
-        border: 1px solid rgba(0,0,0,.005);
+        border: 1px solid rgba(0,0,0,.05);
         height: 46px;
         
         top: calc(var(--height-header)/2);

@@ -114,6 +114,11 @@ header{
     padding-left:0;
     list-style: none;
 }
+.navbar__list-item{
+    position: relative;
+    flex:1;
+    text-align: center;
+}
 
 .navbar__list-link{
     
@@ -207,6 +212,9 @@ header{
 }
 
 /* Product */
+.product__link{
+    text-decoration: none;
+}
 .product{
     background-color: var(--color-white);
     border: 1px solid #efefef;
@@ -479,4 +487,239 @@ DEAL HOT */
     -webkit-user-select: none;
     padding: 2px 4px;
     
+}
+
+
+
+
+
+.container{
+    
+    margin-top:calc(var(--height-header)+10%);
+}
+.breadcrumbs{
+   
+}
+.breadcrumbs__list{
+    padding-left: 0;
+    list-style: none;
+    display: flex;
+}
+.breadcrumbs__list--item{
+    display: flex;
+}
+.breadcrumbs__list--link{
+    display: block;
+    font-size: 1.3rem;
+    color:black;
+    text-decoration: none;
+    font-weight: 300;
+    
+}
+/* BAIVIET */
+.postheader__box{
+    background-color: var(--color-white);
+    padding: 14px;
+}
+.tickid-svg-icon{
+    margin:0 4px;
+}
+.listimgs__img{
+    width: 100%;
+}
+.list__imgs-item{
+    margin-top:8px;
+    display: flex;
+}
+.listimgs__imgs-link{
+    margin-right:4px;
+    padding: 4px;
+    width: 80px;
+}
+ .active{
+    border: 1px solid var(--color-abc);
+}
+
+/* BAIVIET 1 */
+.profile__header{
+   
+    
+}
+.profile__hashtag{
+    margin-right: 10px;
+    text-align: center;
+    --var-height-hastag:18px;
+    min-width: 76px;
+    line-height: var(--var-height-hastag);
+    height: var(--var-height-hastag);
+    display: inline-block;
+    float: left;
+    background-color: var(--color-abc);
+}
+.profile__hashtag span{
+    color:white;
+    font-size:1.2rem;
+}
+.profile__hashtag i{
+    color:white;
+}
+.profile__title{
+    font-size:2rem;
+    font-weight: 400;
+}
+/* BAIVIET 2*/
+.postheader__box-cmt{
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+}
+.cmt__star{
+    
+    display: flex;
+}
+.cmt__star span{
+    font-size:1.8rem;
+    color:var(--color-abc);
+    margin-right: 4px;
+    border-bottom: 1px solid var(--color-abc);
+}
+.cmt__star-list{
+    display: flex;
+    padding-right: 16px;
+    border-right: 1px solid #dbdbdb;
+    align-items: center;
+    font-size:1.8rem;
+    color:var(--color-abc);
+}
+.cmt__star-list i{
+    margin-right:2px;
+    font-size:1.2rem;
+}
+.cmt__danhgia{
+    padding-right: 16px;
+    padding-left: 16px;
+    border-right: 1px solid #dbdbdb;
+}
+.cmt__danhgia-number{
+    font-size:1.6rem;
+    margin-right: 4px;
+    border-bottom: 1px solid black;
+}
+.cmt__danhgia-content{
+    font-size:1.4rem;
+    color:#757575;
+}
+.cmt__sold{
+    padding-right: 16px;
+    padding-left: 16px;
+    
+}
+.cmt__sold-number{
+    font-size:1.6rem;
+    margin-right: 4px;
+}
+.cmt__sold-content{
+    font-size:1.4rem;
+    color:#757575;
+}
+/* BAIVIET 3 */
+.postheader__box-price{
+    margin-top:20px;
+    display: flex;
+    align-items: center;
+
+    width:100%;
+    height:66px;
+    background-color: #fafafa;
+}
+.price__title{
+    font-size:2.8rem;
+    margin-left:10px;
+    font-weight: 500;
+    color:var(--color-abc);
+}
+/* BAIVIET 4 */
+.postheader__box-content{
+    display: flex;
+    margin-top:20px;
+}
+.content__left{
+    width: 160px;
+    font-size:1.4rem;
+}
+.content__right{
+    flex:1;
+    line-height: 2.2rem;
+    font-size:1.4rem;
+}
+.content__right-link{
+    font-weight: 400;
+    font-size:1.4rem;
+    color:var(--color-abc);
+    text-decoration: none;
+    display: block;
+}
+/* BAIVIET 5 */
+.postheader__box-amount{
+    display: flex;
+    margin-top:30px;
+}
+.amount__title{
+    width: 160px;
+    font-size:1.4rem;
+}
+.amount__button{
+    display: flex;
+    width: 113px;
+    height:32px;
+    border: 1px solid #e8e8e8;
+
+}
+
+.btn-amount{
+    flex:1;
+    outline: none;
+    cursor: pointer;
+    font-size:1.8rem;
+    color:#999999;
+    background-color: white;
+}
+.amount__button-input{
+    width: 50px;
+    outline: none;
+    border-right: 1px solid #e8e8e8;
+    border-left: 1px solid #e8e8e8;
+    text-align: center;
+    font-size:1.4rem;
+}
+
+
+
+
+.postheader__box-sell{
+    margin-top:20px;
+}
+.btnn{
+    display: inline-block;
+    min-width: 184px;
+    height:50px;
+    line-height:50px;
+    text-align: center;
+    font-size:1.4rem;
+    text-decoration: none;
+    border-radius: 2px;
+    margin-right: 10px;
+}
+.btn-sell{
+    border:1px solid var(--color-abc);
+    background-color: var(--color-abc);
+    color:white;
+}
+.btn-cart{
+    border:1px solid var(--color-abc);
+    background-color:#fcece6;
+    color:var(--color-abc);
+}
+.btnn:hover{
+    filter: brightness(98%);
 }
