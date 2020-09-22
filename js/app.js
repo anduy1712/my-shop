@@ -5,8 +5,13 @@ function openModal() {
 function closeModal() {
     document.getElementById('modal').style.display = 'none';
 }
+
+
+
+
+//Kiểm tra các trường 
 function Validator(options) {
-    //Lay id cua form 
+    //Lấy thẻ <form>
     var formElement = document.querySelector(options.form)
     
     //Hàm kiểm tra lỗi 
@@ -30,7 +35,7 @@ function Validator(options) {
         }
     }
 
-    //Kiem tra xem co null ko
+    //Kiểm tra xem có form không 
     if (formElement)
     {
         // Duyêt mảng rules, 
@@ -59,7 +64,10 @@ function Validator(options) {
         })
     }
 }
-// Dinh nghia cac rules
+/*Định nghĩa các rules, bao gồm:
+    1 Kiểm tra rỗng
+    2 Kiểm tra email
+    3 Kiểm tra mật khẩu  */
 Validator.isRequired = function (selector){
     return {
         selector: selector,
@@ -89,43 +97,3 @@ Validator.isPassword = function (selector,min){
 }
 
 
-// function Validator(options){
-    
-//     var formElement = document.querySelector(options.form);
-//     if (formElement)
-//     {
-//         options.rules.forEach(function(rules){
-//             var inputElement = formElement.querySelector(rules.selector);
-//             var errorElement = inputElement.parentElement.querySelector('.form__group-error');
-//             inputElement.onblur = function(){
-//                 var errorMessage = rules.test(inputElement.value);
-//                 if (errorMessage)
-//                 {
-//                     errorElement.innerText = errorMessage;
-//                     inputElement.parentElement.classList.add('invalid');
-//                 }
-//                 else{
-//                     errorElement.innerText = '';
-//                     inputElement.parentElement.classList.remove('invalid');
-//                 }
-               
-//             }
-//         })
-//     }
-// }
-// Validator.isRequired = function (selector){
-//     return {
-//         selector:selector,
-//         test: function(value){
-//             return value.trim() ? undefined : 'Vui long nhap ten truong';
-//         }
-//     }
-// }
-// Validator.isEmail = function (selector){
-//     return {
-//         selector:selector,
-//         test: function(){
-            
-//         }
-//     }
-// }
