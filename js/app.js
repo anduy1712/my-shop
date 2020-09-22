@@ -91,7 +91,7 @@ Validator.isPassword = function (selector,min){
         selector: selector,
         test: function (value) {
             
-            return value >= min ? undefined : "Vui lòng nhập tối thiếu 6 kí tự"
+            return value.length >= min ? undefined : "Vui lòng nhập tối thiếu 6 kí tự"
         }
     }
 }

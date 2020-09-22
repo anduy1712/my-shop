@@ -78,6 +78,7 @@
 } 
 /* mobile */
 @media (max-width: 739px){
+    
     .row{
         margin-left: 4px!important;
         margin-right: 4px!important;
@@ -202,6 +203,19 @@
    .btnn{
     min-width: 146px;
    }
+   .cart__btn{
+       position: unset;
+   }
+   .fa-shopping-cart::after{
+        width: 9px;
+        font-size: 1.2rem;
+   }
+   .header__navbar-cart{
+    top: 100%;
+    left: 0;
+    right: 0;
+    width: 100%;
+}
    
 } 
 

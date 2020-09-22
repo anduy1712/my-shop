@@ -134,8 +134,10 @@ display: none;
     background: white;
     border: 1px solid #efefef;
     position: absolute;
-    top:89%;
-    right: -11px;
+    
+    top: 130%;
+    right: -40%;
+
    
 }
 .header__navbar-cart::after{
@@ -174,6 +176,7 @@ display: none;
     padding: 8px 12px;
 }
 .cart__btn{
+    position: relative;
     cursor: pointer;
 }
 .cart__btn:hover  .header__navbar-cart{
