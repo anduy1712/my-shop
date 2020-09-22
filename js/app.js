@@ -95,5 +95,13 @@ Validator.isPassword = function (selector,min){
         }
     }
 }
-
+Validator.isConfirm = function (selector,isConfirm){
+    return {
+        selector: selector,
+        test: function (value) {
+            
+            return value === isConfirm() ? undefined : 'Vui lòng nhập chính xác mật khẩu';
+        }
+    }
+}
 
