@@ -533,18 +533,28 @@ DEAL HOT */
 }
 .dealhot__item-hashtag{
     position: absolute;
-    top:3%;
-    right:4%;
-    background-color: #db0d0d;
-    color:white;
+    top: -2%;
+    left: -2%;
+    background-color: rgb(238, 82, 53);
+    color: white;
     padding: 4px 6px;
-    border-radius: 2px;
-    font-size:1.2rem;
+    /* border-radius: 2px; */
+    font-size: 1.2rem;
     font-weight: 400;
 
 }
+.dealhot__item-hashtag::after {
+    content: "";
+    position: absolute;
+    top: 0px;
+    right: -9%;
+    border-left: 5px solid red;
+    border-top: 5px solid transparent;
+    filter: brightness(60%);
+}
 .dealhot__item{
-    border:1px solid #dcdcdc;
+    cursor: pointer;
+    /* border:1px solid #dcdcdc; */
     background-color: white;
     width:255px;
     /* width: 100%; */
