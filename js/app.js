@@ -5,22 +5,88 @@ function openModal() {
 function closeModal() {
     document.getElementById('modal').style.display = 'none';
 }
+//Đổi ảnh
+function changeImg(value){
+    
+    var formElement = document.getElementById(value.form);
+    if(formElement)
+    {
+        var imgElement = formElement.querySelectorAll('.dealhot__listimg-item');
+        var imgMain = formElement.querySelector('.dealhot__item-img');
+        
+        console.log();
+        imgElement.forEach(function(value){
+            //value: the <img>
+            
+            value.onclick = function (){
+                
+                switch(value.id){
+                    case 'oneImg':
+                        imgMain.setAttribute('src',value.getAttribute('src'));
+                        value.classList.add('selectImg');
+                        //Loi
 
+                        formElement.getElementsByClassName('dealhot__listimg-item')['twoImg'].classList.remove('selectImg');
+                        formElement.getElementsByClassName('dealhot__listimg-item')['threeImg'].classList.remove('selectImg');
+                        formElement.getElementsByClassName('dealhot__listimg-item')['fourImg'].classList.remove('selectImg');
+                        break;
+                    case 'twoImg':
+                        imgMain.setAttribute('src',value.getAttribute('src'));
+                        value.classList.add('selectImg');
+                        formElement.getElementsByClassName('dealhot__listimg-item')['oneImg'].classList.remove('selectImg');
+                        formElement.getElementsByClassName('dealhot__listimg-item')['threeImg'].classList.remove('selectImg');
+                        formElement.getElementsByClassName('dealhot__listimg-item')['fourImg'].classList.remove('selectImg');
+                        break;
+                    case 'threeImg':
+                        imgMain.setAttribute('src',value.getAttribute('src'));
+                        value.classList.add('selectImg');
+                        formElement.getElementsByClassName('dealhot__listimg-item')['oneImg'].classList.remove('selectImg');
+                        formElement.getElementsByClassName('dealhot__listimg-item')['twoImg'].classList.remove('selectImg');
+                        formElement.getElementsByClassName('dealhot__listimg-item')['fourImg'].classList.remove('selectImg');
+                        break;
+                    case 'fourImg':
+                        imgMain.setAttribute('src',value.getAttribute('src'));
+                        value.classList.add('selectImg');
+                        formElement.getElementsByClassName('dealhot__listimg-item')['oneImg'].classList.remove('selectImg');
+                        formElement.getElementsByClassName('dealhot__listimg-item')['twoImg'].classList.remove('selectImg');
+                        formElement.getElementsByClassName('dealhot__listimg-item')['threeImg'].classList.remove('selectImg');
+                        break;
+                }
+                
+                
+            }
+            
+        })
+    }
+
+   
+}
 
 
 
 //Kiểm tra các trường 
 function Validator(options) {
+    var selectorRule = {};
     //Lấy thẻ <form>
     var formElement = document.querySelector(options.form)
     
     //Hàm kiểm tra lỗi 
     function validate(inputElement,rules){
+        
         //Kiểm tra điều kiện 
-        var errorMessage = rules.test(inputElement.value); //inputElement.value Lấy giá trị trong thẻ <input >
+        var errorMessage; //inputElement.value Lấy giá trị trong thẻ <input >
         //Lấy thẻ <span> dùng để hiển thị lỗi 
         var errorElement = inputElement.parentElement.querySelector(options.errorSeletor); // options.errorSeletor lấy tên class 
-                    
+        //Lưu các rule
+        var rules = selectorRule[rules.selector];   
+        //Duyệt từng phần từ (hàm) trong mảng rules
+        for (var i = 0 ; i < rules.length ;i++)
+        {
+            //Hàm truyền giá trị vào 
+            errorMessage = rules[i](inputElement.value) //inputElement.value: giá trị của thẻ input 
+            //Nếu lỗi thì dừng ngay
+            if(errorMessage) break;
+        }
         //Kiểm tra errorMessage có lỗi ko
         //Lỗi thì thêm class 'invalid              
         if (errorMessage){
@@ -43,7 +109,14 @@ function Validator(options) {
             // Lấy thẻ input, VD như: <input id="name">
             var inputElement = formElement.querySelector(rules.selector)  // rules.selector, VD như: #name , #email
             
-            
+            //Nếu là mảng thì thêm phần từ mới vào mảng
+            if(Array.isArray(selectorRule[rules.selector]))
+            {
+                selectorRule[rules.selector].push(rules.test)
+
+            }else{ //Nếu ko phải là mảng thì gán mảng 
+                selectorRule[rules.selector] = [rules.test];
+            }
             // Kiểm tra null
             if(inputElement)
             {
@@ -63,6 +136,7 @@ function Validator(options) {
 
         })
     }
+    
 }
 /*Định nghĩa các rules, bao gồm:
     1 Kiểm tra rỗng

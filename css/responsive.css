@@ -189,6 +189,7 @@
     .row-design{
         flex-wrap: unset!important;
         overflow-x: auto;
+        justify-content: unset;
     }
     /* Chi tiet san pham */
    .postheader__box-content{
@@ -266,7 +267,7 @@
 .row-design{
     display: flex;
     flex-wrap: wrap;
-    justify-content: unset;
+    justify-content: space-between;
     margin-left: 8px;
     margin-right: 8px;
 }

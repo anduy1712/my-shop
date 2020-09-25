@@ -572,6 +572,9 @@ DEAL HOT */
     padding: 4px 4px;
 }
 .dealhot__listimg-item:first-child{
+    
+}
+.selectImg{
     border:1px solid black;
     padding: 4px 4px;
 }
