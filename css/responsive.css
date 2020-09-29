@@ -73,12 +73,15 @@
     }
     .container{
     
-        margin-top:calc(var(--height-header));
+        margin-top:calc(var(--height-header) + 20px)
     }
 } 
 /* mobile */
 @media (max-width: 739px){
+    .container{
     
+        margin-top:calc(var(--height-header-mobile) + 15px)
+    }
     .row{
         margin-left: 4px!important;
         margin-right: 4px!important;
@@ -96,7 +99,7 @@
         display: block;
     }
     header{
-        height: 54px;
+        height: var(--height-header-mobile);
     }
     .header__navbar{
         height:100%;
@@ -217,6 +220,11 @@
     right: 0;
     width: 100%;
 }
+
+    /* hashtag */
+    .dealhot__item-hashtag::after{
+
+    }
    
 } 
 

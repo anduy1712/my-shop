@@ -30,8 +30,8 @@
                     </div>
                     <div class="header__navbar-item">
                         
-                        <p style="font-weight: 400" onclick="openModal()" class="header__navbar-heading">Đăng Ký </p>
-                        <p style="font-weight: 400" class="header__navbar-heading">Đâng nhập </p>
+                        <p style="font-weight: 400" onclick="openModal('modal1')" class="header__navbar-heading">Đăng Ký </p>
+                        <p style="font-weight: 400" onclick="openModal('modal2')" class="header__navbar-heading">Đâng nhập </p>
                     </div>
                 </div>
                 <div class="header__navbar-bot">
@@ -639,9 +639,9 @@
                         
                 </div>
     </div>
-    <!-- MODAL LOGIN -->
-    <div id="modal" class="modal">
-        <div onclick="closeModal()" class="modal__overlay">
+    <!-- MODAL register -->
+    <div id="modal1" class="modal">
+        <div onclick="closeModal('modal1')" class="modal__overlay">
 
         </div>
         <div id="modal__body" class="modal__body">
@@ -649,31 +649,31 @@
                     <h3 class="modal__body-title">Đăng ký thành viên</h3>
             </div>
             <div class="modal__body-content">
-                <form id="form-1" action="" class="form-1">
+                <form method="post" id="form-1" action="" class="form-1">
                     <div class="form__group ">
                         <label for="name" class="form__group-lb">Họ và tên</label>
-                        <input id="name" placeholder="VD:Phan Trần Duy An" type="text" class="form__group-control">
+                        <input id="name" name="name" placeholder="VD:Phan Trần Duy An" type="text" class="form__group-control">
                         <span class="form__group-error"></span>
                     </div>
                     <div class="form__group">
                         <label for="email" class="form__group-lb">Email</label>
-                        <input id="email" placeholder="VD:anduy1712@gmail.com" type="text" class="form__group-control">
+                        <input id="email" name="email" placeholder="VD:anduy1712@gmail.com" type="text" class="form__group-control">
                         <span class="form__group-error"></span>
 
                     </div>
                     <div class="form__group">
                             <label for="password" class="form__group-lb">Mật khẩu</label>
-                            <input id="password" placeholder="Nhập mật khẩu" type="password" class="form__group-control">
+                            <input id="password" name="password" placeholder="Nhập mật khẩu" type="password" class="form__group-control">
                             <span class="form__group-error"></span>
                     </div>
                     <div class="form__group">
                             <label for="password__confirm" class="form__group-lb">Nhập lại mật khẩu</label>
-                            <input id="password__confirm" placeholder="Nhập mật khẩu" type="password" class="form__group-control">
+                            <input id="password__confirm" name="password__confirm" placeholder="Nhập mật khẩu" type="password" class="form__group-control">
                             <span class="form__group-error"></span>
                     </div>
                     <div class="form__btn">
                             <button onclick="closeModal()" class="btn btn-back">Trở lại</button>
-                            <button class="btn btn-primary">Đăng ký</button>
+                            <button type="submit" class="btn btn-primary">Đăng ký</button>
                     </div>
                     
                 </form>
@@ -688,7 +688,47 @@
             </div>
         </div>
     </div>
-   
+   <!-- MODAL LOGIN -->
+   <div id="modal2" class="modal">
+    <div onclick="closeModal('modal2')" class="modal__overlay">
+
+    </div>
+    <div id="modal__body" class="modal__body">
+        <div class="modal__body-head">
+                <h3 class="modal__body-title">Đâng nhập</h3>
+        </div>
+        <div class="modal__body-content">
+            <form method="post" id="form-2" action="" class="form-2">
+                
+                <div class="form__group">
+                    <label for="email" class="form__group-lb">Email</label>
+                    <input id="email" name="email" placeholder="VD:anduy1712@gmail.com" type="text" class="form__group-control">
+                    <span class="form__group-error"></span>
+
+                </div>
+                <div class="form__group">
+                        <label for="password" class="form__group-lb">Mật khẩu</label>
+                        <input id="password" name="password" placeholder="Nhập mật khẩu" type="password" class="form__group-control">
+                        <span class="form__group-error"></span>
+                </div>
+                
+                <div class="form__btn">
+                        <button onclick="closeModal()" class="btn btn-back">Trở lại</button>
+                        <button type="submit" class="btn btn-primary">Đăng ký</button>
+                </div>
+                
+            </form>
+        </div>
+        <div class="modal__body_social">
+            <div class="social">
+                <a class="social__fb-text">Đâng nhập với Facebook</a>
+            </div>
+            <div class="social">
+                    <a class="social__gg-text">Đâng nhập với Google</a>
+                </div>
+        </div>
+    </div>
+</div>
 
     <!-- Footer  -->
     <footer>
@@ -760,7 +800,10 @@
                 Validator.isConfirm('#password__confirm',function (){
                     return document.querySelector('#form-1 #password').value;
                 })
-            ]
+            ],
+            onSubmit: function(value){
+                console.log(value);
+            }
     
         })
         changeImg({
@@ -775,6 +818,8 @@
         changeImg({
             form: 'dealhot-form4'
         })
+        var now = new Date()
+        console.log(now.getTime());
     </script>
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <!-- Carousel -->

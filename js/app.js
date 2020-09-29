@@ -1,9 +1,9 @@
 
-function openModal() {
-    document.getElementById('modal').style.display = 'flex';
+function openModal(value) {
+    document.getElementById(value).style.display = 'flex';
 }
-function closeModal() {
-    document.getElementById('modal').style.display = 'none';
+function closeModal(value) {
+    document.getElementById(value).style.display = 'none';
 }
 //Đổi ảnh
 function changeImg(value){
@@ -11,10 +11,11 @@ function changeImg(value){
     var formElement = document.getElementById(value.form);
     if(formElement)
     {
+       
         var imgElement = formElement.querySelectorAll('.dealhot__listimg-item');
         var imgMain = formElement.querySelector('.dealhot__item-img');
         
-        console.log();
+        
         imgElement.forEach(function(value){
             //value: the <img>
             
@@ -99,11 +100,39 @@ function Validator(options) {
             inputElement.parentElement.classList.remove('invalid');
 
         }
+        return !errorMessage;
     }
-
+    
     //Kiểm tra xem có form không 
     if (formElement)
     {
+        var formIsValid = true;
+        formElement.onsubmit = function(e){
+            e.preventDefault();
+            options.rules.forEach(function(rules){
+                var inputElement = formElement.querySelector(rules.selector) 
+                var isValid = validate(inputElement,rules);
+                if (isValid)
+                {
+                    formIsValid = true;
+                }
+                else{
+                    formIsValid = false;
+                    
+                }
+            })
+            
+           
+            
+            if (formIsValid)
+            {
+                var inputValue = formElement.querySelectorAll('[name]');
+                var arrayValue = Array.from(inputValue).reduce(function(value,input){
+                    return (value[input.name] = input.value) && value;
+                }, {}) //??????
+                options.onSubmit(arrayValue);
+            }
+        }
         // Duyêt mảng rules, 
         options.rules.forEach(function(rules){
             // Lấy thẻ input, VD như: <input id="name">
