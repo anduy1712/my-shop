@@ -85,6 +85,11 @@ body{
 .form__group{
     margin-bottom: 12px;
 }
+.form__group-box{
+    display: flex;
+    justify-content: space-between;
+   
+}
 .form__group-lb{
     font-weight: 500;
     font-size:1.5rem;
